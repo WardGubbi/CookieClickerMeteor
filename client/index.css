@@ -1,0 +1,30 @@
+/* CSS declarations go here */
+
+body, html {
+	background: linear-gradient(to right, #489dd5 0%, #2070b6 100%);
+    margin: 0;
+    padding: 0;
+	font-family: 'Roboto', sans-serif;
+}
+
+.left {
+	border-right: 2px solid #a4c9e3;
+	height: 100vh;
+}
+
+.center {
+	border-right: 2px solid #a4c9e3;
+	height: 100vh;
+    padding-left: 16px;
+    overflow-x: hidden;
+}
+
+.right {
+    height: 100vh;
+    overflow-x: hidden;
+}
+
+.store {
+
+}
+

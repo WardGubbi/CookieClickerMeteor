@@ -1,0 +1,16 @@
+<template name="boosterStore">
+    {{#each boosters}}
+        <div class="product" data-toggle="tooltip" data-placement="top" title="{{name}}<br/>owned: {{count}}<br/>{{description}}<br/>each {{imgTag}} produces {{numberOfCookies}} per second<br/>{{count}} {{imgTag}}s producing {{getTotalCookies numberOfCookies count}}">
+            <img src="/images/{{imgTag}}.png" class="booster-image"/>
+
+            <div class="content">
+                <p class="name">{{name}}</p>
+                <p class="price">{{getSessionCurrentPrice name}}</p>
+            </div>
+
+            <div class="count">
+                {{count}}
+            </div>
+        </div>
+    {{/each}}
+</template>

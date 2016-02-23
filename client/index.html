@@ -1,0 +1,47 @@
+<head>
+  <title>Cookie Clicker</title>
+  <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,100,500' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+  {{> app}}
+
+    <script>
+        $('.product').tooltip({html: true});
+    </script>
+</body>
+
+<template name="app">
+
+
+<div class="container" style="background: black;">
+	<div class="row">
+		<div class="col-xs-4">
+			<div class="row">
+				{{> cookie}}
+			</div>
+			<div class="row">
+				{{>cursors}}
+			</div>
+		</div>
+		<div class="col-xs-4">
+			{{> boosterArray}}
+		</div>
+		<div class="col-xs-4">
+			<div class="row">
+				<div class="col-xs-12">
+					{{>upgradeStore}}
+				</div>
+			</div>
+                <div>{{> boosterOptions}}</div>
+			<div class="row">
+                {{> boosterStore}}
+			</div>
+		</div>
+	</div>
+</div>
+</template>
+
+<template name="cursors" style="border: 1px solid white">
+
+</template>

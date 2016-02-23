@@ -1,0 +1,12 @@
+<template name="upgradeStore">
+	<div class="row">
+		<div class="col-xs-12">
+			<h2 class="row title">Store</h2>
+			<div class="row storePanel">
+				{{#each availableUpgrades}}
+					<img class="upgradeItem" src="{{img}}"/>
+				{{/each}}
+			</div>
+		</div>
+	</div>
+</template>

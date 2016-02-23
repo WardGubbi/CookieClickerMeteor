@@ -1,0 +1,54 @@
+/*
+        <div class="boosterOptionBuy">Buy</div>
+        <div class="boosterOptionSell">Sell</div>
+        <div class="boosterOption1">1</div>
+        <div class="boosterOption10">10</div>
+        <div class="boosterOption100">100</div>
+        */
+
+.boosterOption {
+    box-shadow: 0px 0px 4px #000 inset;
+    overflow: hidden;
+    width: 240px;
+    height: 32px;
+    position: relative;
+    padding-left: 80px;
+    background-color: black;
+    width: 100%;
+}
+
+
+.boosterOption div {
+    float: left;
+    text-align: center;
+    font-variant: small-caps;
+    color: #fff;
+    font-weight: bold;
+    font-size: 14px;
+    opacity: 0.5;
+    cursor: pointer;
+    text-shadow: 0px 1px 0px #000;
+}
+
+.boosterOptionBuy {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 80px;
+    padding: 1px 0px;
+    height: 50%;
+}
+
+.boosterOptionSell {
+    position: absolute;
+    left: 0px;
+    bottom: 1px;
+    width: 80px;
+    padding: 1px 0px;
+    height: 50%;
+}
+
+.boosterOptionAmount {
+    width: 33%;
+    padding: 9px 0px;
+}

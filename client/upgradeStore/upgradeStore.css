@@ -1,0 +1,12 @@
+.upgradeItem{
+    border: 3px solid sandybrown;
+    padding: 10px;
+    height: 60px;
+    width: 60px;
+    cursor: pointer;
+}
+
+.storePanel{
+    border-bottom: 20px solid saddlebrown;
+    border-top: 20px solid saddlebrown;
+}

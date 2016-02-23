@@ -1,0 +1,45 @@
+.game-info {
+	display: flex;
+	display: -webkit-flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.game-info .title {
+	margin-bottom: 3vh;
+}
+
+.game-info .cookie-info {
+	margin-bottom: 5vh;
+}
+
+.game-info .cookie-info p {
+	color: #fff;
+}
+
+
+.cookieButton {
+	background: transparent;
+	border: none;
+    position: relative;
+    margin: auto;
+    width: 100%;
+}
+
+.cookieButton:hover, .cookieButton:focus {
+	outline: none;
+}
+
+.cookieButton img {
+    width: 80%;
+}
+
+.cookieButton img:active {
+	transform: scale(0.8, 0.8);
+}
+
+.title {
+    color:white;
+    text-align: center;
+}
