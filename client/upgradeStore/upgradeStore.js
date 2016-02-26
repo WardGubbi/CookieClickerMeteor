@@ -1,5 +1,8 @@
-Meteor.subscribe('upgrades');
-Meteor.subscribe('boosters');
+Template.upgradeStore.onCreated(() => {
+	Meteor.subscribe('upgrades');
+	Meteor.subscribe('boosters');
+});
+
 let bought = [];
 let game = Session.get('game');
 var boosters = {};
