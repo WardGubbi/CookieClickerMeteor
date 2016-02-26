@@ -1,4 +1,6 @@
-Meteor.subscribe('boosters');
+Template.boosterArray.onCreated(() => {
+	Meteor.subscribe('boosters');
+});
 
 Template.boosterArray.helpers({
 	cursorBooster: function(event) {

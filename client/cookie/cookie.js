@@ -1,4 +1,6 @@
-Meteor.subscribe('games');
+Template.cookie.onCreated(() => {
+	Meteor.subscribe('games');
+});
 
 Template.cookie.helpers({
 	game: function() {

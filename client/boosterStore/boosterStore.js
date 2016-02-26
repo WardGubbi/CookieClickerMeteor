@@ -1,4 +1,7 @@
-Meteor.subscribe('boosters');
+Template.boosterStore.onCreated(() => {
+	Meteor.subscribe('boosters');
+});
+
 $('.product').tooltip({html: true});
 
 Template.boosterStore.helpers({
