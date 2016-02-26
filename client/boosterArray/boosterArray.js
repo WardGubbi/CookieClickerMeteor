@@ -4,13 +4,12 @@ Template.boosterArray.onCreated(() => {
 
 Template.boosterArray.helpers({
 	booster(boosterName) {
-		var numberOfBoosters = [];
-		var booster = Boosters.find({'name': boosterName}).fetch();
-		for(var i = 0; i < booster.length; i++) {
-			for(var j = 0; j < booster[i].count; j++) {
-				numberOfBoosters.push({imgTag: booster[i].imgTag})
-			}
+		const booster = Boosters.findOne({'name': boosterName}, {fields:{count:1, imgTag:1}});
+		if (!booster) {
+			//in case subscription isn't ready yet
+			return [];
 		}
-		return numberOfBoosters;
+		return _.times(booster.count, () => { return {imgTag: booster.imgTag}; });
+		//use underscore instead of dor loop
 	}
 });
