@@ -3,7 +3,7 @@ Template.boosterArray.onCreated(() => {
 });
 
 Template.boosterArray.helpers({
-	cursorBooster: function(event) {
+	cursorBooster: function() {
 		var numberOfBoosters = [];
 		var booster = Boosters.find({'name': 'Cursor'}).fetch();
 		for(var i = 0; i < booster.length; i++) {
@@ -13,7 +13,7 @@ Template.boosterArray.helpers({
 		}
 		return numberOfBoosters;
 	},
-	grandmaBooster: function(event) {
+	grandmaBooster: function() {
 		var numberOfBoosters = [];
 		var booster = Boosters.find({'name': 'Grandma'}).fetch();
 		for(var i = 0; i < booster.length; i++) {
@@ -23,7 +23,7 @@ Template.boosterArray.helpers({
 		}
 		return numberOfBoosters;
 	},
-	farmBooster: function(event) {
+	farmBooster: function() {
 		var numberOfBoosters = [];
 		var booster = Boosters.find({'name': 'Farm'}).fetch();
 		for(var i = 0; i < booster.length; i++) {
@@ -33,7 +33,7 @@ Template.boosterArray.helpers({
 		}
 		return numberOfBoosters;
 	},
-	mineBooster: function(event) {
+	mineBooster: function() {
 		var numberOfBoosters = [];
 		var booster = Boosters.find({'name': 'Mine'}).fetch();
 		for(var i = 0; i < booster.length; i++) {
@@ -43,7 +43,7 @@ Template.boosterArray.helpers({
 		}
 		return numberOfBoosters;
 	},
-	bankBooster: function(event) {
+	bankBooster: function() {
 		var numberOfBoosters = [];
 		var booster = Boosters.find({'name': 'Bank'}).fetch();
 		for(var i = 0; i < booster.length; i++) {
