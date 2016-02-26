@@ -3,7 +3,6 @@ Template.upgradeStore.onCreated(() => {
 	Meteor.subscribe('boosters');
 });
 
-let bought = [];
 let game = Session.get('game');
 var boosters = {};
 var numberOfCookies = {};
