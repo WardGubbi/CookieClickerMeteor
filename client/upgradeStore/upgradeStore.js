@@ -15,16 +15,49 @@ Template.upgradeStore.helpers({
 			return Upgrades.find();
 		},
 		availableUpgrades: function () {
-            // this query is being run every second :S
-            const game = Session.get('game');
-            const bought = game && game.upgrades;
-            const boosters = Boosters.find({},{fields:{name:1,count:1,numberOfCookies:1}}).fetch();
-            return Upgrades.find().fetch()
-                // filter out upgrades that have been bought
-                .filter((upgrade) => !bought || !bought.indexOf(upgrade._id))
-				// only return the upgrades that are available based on the amount of boosters you have
-			    .filter((upgrade) => upgrade.prereq < _.find(boosters, (b) => b.name == upgrade.booster).count);
-			}
+			game = Session.get('game');
+			var bought = game.upgrades;
+
+			boosters = {
+				cursor: Boosters.findOne({'name': 'Cursor'}).count,
+				grandma: Boosters.findOne({'name': 'Grandma'}).count,
+				farm: Boosters.findOne({'name': 'Farm'}).count,
+				mine: Boosters.findOne({'name': 'Mine'}).count,
+				bank: Boosters.findOne({'name': 'Bank'}).count
+			};
+
+			numberOfCookies = {
+				cursor: Boosters.findOne({'name': 'Cursor'}).numberOfCookies,
+				grandma: Boosters.findOne({'name': 'Grandma'}).numberOfCookies
+			};
+
+			console.log(boosters);
+			if (bought && bought.length)
+				return Upgrades.find({
+					"$and": [{
+						"$or": [
+							{"$and": [{"booster": "Cursor"}, {"prereq": {$lte: boosters.cursor}}]},
+							{"$and": [{"booster": "Grandma"}, {"prereq": {$lte: boosters.grandma}}]},
+							{"$and": [{"booster": "Farm"}, {"prereq": {$lte: boosters.farm}}]},
+							{"$and": [{"booster": "Mine"}, {"prereq": {$lte: boosters.mine}}]},
+							{"$and": [{"booster": "Bank"}, {"prereq": {$lte: boosters.bank}}]}
+
+
+						]
+					}, {"_id": {"$nin": game.upgrades}}
+					]
+				});
+			else
+				return Upgrades.find({
+					"$or": [
+						{"$and": [{"booster": "Cursor"}, {"prereq": {$lte: boosters.cursor}}]},
+						{"$and": [{"booster": "Grandma"}, {"prereq": {$lte: boosters.grandma}}]},
+						{"$and": [{"booster": "Farm"}, {"prereq": {$lte: boosters.farm}}]},
+						{"$and": [{"booster": "Mine"}, {"prereq": {$lte: boosters.mine}}]},
+						{"$and": [{"booster": "Bank"}, {"prereq": {$lte: boosters.bank}}]}
+					]
+				});
+		}
 });
 
 Template.upgradeStore.events({
