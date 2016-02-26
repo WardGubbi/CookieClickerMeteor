@@ -1,37 +1,37 @@
 <template name="boosterArray">
-	<div class="row boosters">
-		<div class="col-xs-12">
-			{{#each cursorBooster}}
-				<img class="booster-array-image" src="images/{{imgTag}}.png"/>
-			{{/each}}
-		</div>
-	</div>
-	<div class="row boosters">
-		<div class="col-xs-12">
-			{{#each grandmaBooster}}
-				<img class="booster-array-image" src="images/{{imgTag}}.png"/>
-			{{/each}}
-		</div>
-	</div>
-	<div class="row boosters">
-		<div class="col-xs-12">
-			{{#each farmBooster}}
-				<img class="booster-array-image" src="images/{{imgTag}}.png"/>
-			{{/each}}
-		</div>
-	</div>
-	<div class="row boosters">
-		<div class="col-xs-12">
-			{{#each mineBooster}}
-				<img class="booster-array-image" src="images/{{imgTag}}.png"/>
-			{{/each}}
-		</div>
-	</div>
-	<div class="row boosters">
-		<div class="col-xs-12">
-			{{#each bankBooster}}
-				<img class="booster-array-image" src="images/{{imgTag}}.png"/>
-			{{/each}}
-		</div>
-	</div>
+    <div class="row boosters">
+        <div class="col-xs-12">
+            {{#each booster 'Cursor'}}
+                <img class="booster-array-image" src="images/{{imgTag}}.png"/>
+            {{/each}}
+        </div>
+    </div>
+    <div class="row boosters">
+        <div class="col-xs-12">
+            {{#each booster 'Grandma'}}
+                <img class="booster-array-image" src="images/{{imgTag}}.png"/>
+            {{/each}}
+        </div>
+    </div>
+    <div class="row boosters">
+        <div class="col-xs-12">
+            {{#each booster 'Farm'}}
+                <img class="booster-array-image" src="images/{{imgTag}}.png"/>
+            {{/each}}
+        </div>
+    </div>
+    <div class="row boosters">
+        <div class="col-xs-12">
+            {{#each booster 'Mine'}}
+                <img class="booster-array-image" src="images/{{imgTag}}.png"/>
+            {{/each}}
+        </div>
+    </div>
+    <div class="row boosters">
+        <div class="col-xs-12">
+            {{#each booster 'Bank'}}
+                <img class="booster-array-image" src="images/{{imgTag}}.png"/>
+            {{/each}}
+        </div>
+    </div>
 </template>
