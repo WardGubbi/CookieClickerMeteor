@@ -10,6 +10,5 @@ Template.boosterArray.helpers({
 			return [];
 		}
 		return _.times(booster.count, () => { return {imgTag: booster.imgTag}; });
-		//use underscore instead of dor loop
 	}
 });

@@ -34,7 +34,7 @@ setInterval(function() {
 		if(error) {
 			console.log(error.message);
 		} else if(response === 1) {
-			console.log('Success');
+			// console.log('Success');
 		}
 	});
 }, 1000);
